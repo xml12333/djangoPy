@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from .local_settings import (DATABASES, SECRET_KEY, DEBUG,
-EMAIL_HOST,EMAIL_PORT)
+from .local_settings import *
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,7 +79,16 @@ WSGI_APPLICATION = 'auth.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = DATABASES
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': POSTGRES_DATABASE,
+        'USER':POSTGRES_USER,
+        'PASSWORD':POSTGRES_PASSWORD,
+        'HOST':POSTGRES_HOST,
+        'PORT':POSTGRES_PORT,
+    }
+}
 
 
 # Password validation
@@ -141,4 +149,5 @@ CORS_ALLOW_CREDENTIALS = True
 
 EMAIL_HOST = EMAIL_HOST
 EMAIL_PORT = EMAIL_PORT
+
 

@@ -26,13 +26,13 @@ export const AuthenticatiorForm = (props: {
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
     try{
-    const { status } = await axios.post("two-factor/", {
-      ...props.loginData,
-      code,
-    });
-    if (status === 200) {
-      props.success();
-    }
+      const { status } = await axios.post("two-factor/", {
+        ...props.loginData,
+        code,
+      });
+      if (status === 200) {
+        props.success();
+      }
   }catch{
     toast("Can't pass tho factor authentication. Try again.")
   }
