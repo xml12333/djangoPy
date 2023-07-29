@@ -1,0 +1,19 @@
+import secrets
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'YOUR-DATABASE-NAME',
+        'USER':'YOUR-USERNAME',
+        'PASSWORD':'YOUR-PASSWORD',
+        'HOST':'localhost',
+        'PORT':'5432',
+    }
+}
+
+SECRET_KEY = DJANGO SECRET_KEY
+DEBUG = True
+
+EMAIL_HOST = '127.0.0.1'
+EMAIL_PORT = 99
