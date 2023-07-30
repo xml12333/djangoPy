@@ -18,16 +18,15 @@ RUN addgroup --system django \
     && adduser --system --ingroup django django
 
 # Requirements are installed here to ensure they will be cached.
-COPY ./requirements /requirements
-RUN pip install --no-cache-dir -r /requirements/production.txt \
-    && rm -rf /requirements
+COPY ./requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY --chown=django:django ./compose/production/django/entrypoint /entrypoint
+COPY --chown=django:django ./docker/production/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint
 RUN chmod +x /entrypoint
 
 
-COPY --chown=django:django ./compose/production/django/start /start
+COPY --chown=django:django ./docker/production/start /start
 RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 COPY --chown=django:django . /app
