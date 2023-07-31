@@ -85,7 +85,7 @@ class TwoFactorLoginAPIView(APIView):
 
         response = Response()
         response.set_cookie(key='refresh_token',
-                            value=refresh_token,samesite="none")
+                            value=refresh_token,secure=True,samesite="none")
 
         response.data = {
             'token': access_token
@@ -211,7 +211,7 @@ class GoogleAuthAPIView(APIView):
 
         response = Response()
         response.set_cookie(key='refresh_token',
-                            value=refresh_token,samesite="none")
+                            value=refresh_token,secure=True,samesite="none")
 
         response.data = {
             'token': access_token
