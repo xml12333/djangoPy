@@ -10,7 +10,6 @@ class JWTAuthentication(BaseAuthentication):
         
         # for HTTP_AUTHORIZATION
         auth = get_authorization_header(request).split()
-        print(auth)
         if auth and len(auth) == 2:
             token = auth[1].decode('utf-8')
             id = decode_access_token(token)
@@ -20,7 +19,6 @@ class JWTAuthentication(BaseAuthentication):
             return (user, None)
         # for 'HTTP_COOKIE'
         authCookie = request.META.get('HTTP_COOKIE')
-        print(authCookie)
         if authCookie :
             authCookieList = [el.split('=') for el in authCookie.split(';') ]
             authCookieDict = {el[0].strip():el[1].strip() for el in authCookieList}
