@@ -3,4 +3,5 @@
 
 |  #  | Project  | Demo          |Thumbnail|
 | :-: | -------- | ------------- |---------|
-|01| [Authgoogle](https://github.com/xml12333/djangoPy/tree/01-authGoogle)| [Demo](https://nikt-django-authGoogle.netlify.app/)| ![Thumbnail](info/01-authGoogle/info_thumbnail.jpg)|
+|01| [Authgoogle](https://github.com/xml12333/djangoPy/tree/01-authgoogle)| [Demo](https://nikt-django-authgoogle.netlify.app/)| ![Thumbnail](info/01-authgoogle/info_thumbnail.jpg)|
+|02| [Carshop](https://github.com/xml12333/djangoPy/tree/02-carshop)| [Demo](https://nikt-django-carshop.netlify.app/)| ![Thumbnail](info/02-carshop/info_thumbnail.jpg)|
