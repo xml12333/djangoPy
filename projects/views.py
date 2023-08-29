@@ -1,7 +1,3 @@
-from multiprocessing import context
-from turtle import right
-from unittest import result
-from urllib import request
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Project,Tag

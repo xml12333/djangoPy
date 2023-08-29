@@ -4,9 +4,10 @@ from django.dispatch import receiver
 from .models import Profile
 from django.core.mail import send_mail
 from django.conf import settings
-
+import os
+from dotenv import load_dotenv
 # @receiver(post_save, sender=Profile)
-
+load_dotenv()
 
 def createProfile(sender, instance, created, **kwargs):
     if created:
@@ -45,7 +46,7 @@ def deleteUser(sender, instance, **kwargs):
     except:
         pass
 
-
-post_save.connect(updateUser, sender=Profile)
-post_save.connect(createProfile, sender=User)
-post_delete.connect(deleteUser, sender=Profile)
+if os.getenv('ENABLE_SIGNALS'):
+    post_save.connect(updateUser, sender=Profile)
+    post_save.connect(createProfile, sender=User)
+    post_delete.connect(deleteUser, sender=Profile)
