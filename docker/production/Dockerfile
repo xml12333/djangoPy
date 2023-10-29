@@ -4,6 +4,8 @@ FROM python:3.8-slim-buster
 ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update \
+  #dependencies for cv2
+  && apt-get install ffmpeg libsm6 libxext6 -y\
   # dependencies for building Python packages
   && apt-get install -y build-essential \
   # psycopg2 dependencies
