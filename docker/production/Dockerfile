@@ -5,7 +5,9 @@ ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update \
   #dependencies for cv2
-  && apt-get install ffmpeg libsm6 libxext6 -y\
+  && apt-get install -y ffmpeg \
+  && apt-get install -y libsm6 \
+  && apt-get install -y libxext6 \
   # dependencies for building Python packages
   && apt-get install -y build-essential \
   # psycopg2 dependencies
@@ -19,8 +21,6 @@ RUN apt-get update \
 RUN addgroup --system django \
     && adduser --system --ingroup django django
 
-# make build dir for this project
-RUN mkdir -p ./build
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -34,6 +34,8 @@ COPY --chown=django:django ./docker/production/start /start
 RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 COPY --chown=django:django . /app
+# make build dir for this project
+RUN mkdir -p ./app/build
 
 USER django
 
