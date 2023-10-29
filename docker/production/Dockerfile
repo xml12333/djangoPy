@@ -17,6 +17,8 @@ RUN apt-get update \
 RUN addgroup --system django \
     && adduser --system --ingroup django django
 
+# make build dir for this project
+RUN mkdir -p ./build
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
