@@ -36,6 +36,7 @@ RUN chmod +x /start
 COPY --chown=django:django . /app
 # make build dir for this project
 RUN mkdir -p ./app/build
+RUN mkdir -p ./app/build/static
 
 USER django
 
