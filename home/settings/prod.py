@@ -33,3 +33,4 @@ STRIPE_PUBLISH_KEY = os.getenv('STRIPE_PUBLISH_KEY')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
 
 CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = ['https://saas-face-recognition.dj.nikt.com.ua']
