@@ -38,7 +38,11 @@ On PowerShell:
 ```json
 $env:NODE_OPTIONS = "--openssl-legacy-provider"
 ```
-
+## For testing 
+1. Change the manage.py to use the dev settings
+```
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "home.settings.dev")
+```
 ## Deployment workflow
 1. Change the manage.py to use the production settings
 2. Change the constants.js file inside src to have DEBUG set to false
