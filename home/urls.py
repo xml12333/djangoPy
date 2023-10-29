@@ -8,5 +8,6 @@ urlpatterns = [
     path('rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('admin/', admin.site.urls),
     path('api/', include('core.urls', namespace='api')),
-    re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
+    # for deploy using different frontend server
+    # re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
 ]
