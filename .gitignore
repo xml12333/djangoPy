@@ -1,0 +1,9 @@
+env
+**/*.pyc
+**/__pycache__
+node_modules
+build
+media
+static_root
+youtube.txt
+.env
