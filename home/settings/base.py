@@ -7,6 +7,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DJANGO_DEBUG')
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS").split(" ")
+CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS").split(" ")
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -106,3 +107,4 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 STRIPE_PLAN_ID = 'price_1O6GksGw2Eh7fxU3J9R410jU'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
