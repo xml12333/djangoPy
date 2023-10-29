@@ -23,7 +23,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # STATICFILES_STORAGE = 'whitenoise.django.CompressedManifestStaticFilesStorage'
 STORAGES = {
-    # ...
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },

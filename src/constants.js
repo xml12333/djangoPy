@@ -1,10 +1,10 @@
-let DEBUG = true;
+let DEBUG = false;
 let host = "http://127.0.0.1:8000";
 let stripePublishKey =
   "pk_test_51LeuVyGw2Eh7fxU3fDMc83gz7JTG4HL87hDY29G0qjQvZRWA4rTelOYKAFgpSYGuI9fRC0j0hmijdviFAx1xfgdw00Fq2BvzDq";
 if (DEBUG === false) {
-  host = "";
-  stripePublishKey = "";
+  host = "https://saas-face-recognition.dj.nikt.com.ua/";
+  stripePublishKey = "pk_test_51LeuVyGw2Eh7fxU3fDMc83gz7JTG4HL87hDY29G0qjQvZRWA4rTelOYKAFgpSYGuI9fRC0j0hmijdviFAx1xfgdw00Fq2BvzDq";
 }
 
 export { stripePublishKey };
