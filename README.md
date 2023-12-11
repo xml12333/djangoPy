@@ -9,3 +9,4 @@
 |04| [Saas face recognition](https://github.com/xml12333/djangoPy/tree/04-saas-face-recognition)| [Demo](https://nikt-django-saas-face-recognition.netlify.app/)| ![Thumbnail](info/04-saas-face-recognition/info_thumbnail.jpg)|
 |05| [E commerce](https://github.com/xml12333/djangoPy/tree/05-e-commerce)| [Demo](https://nikt-django-e-commerce.netlify.app/)| ![Thumbnail](info/05-e-commerce/info_thumbnail.jpg)|
 |06| [E commerce2](https://github.com/xml12333/djangoPy/tree/06-e-commerce2)| [Demo](https://nikt-django-e-commerce2.netlify.app/)| ![Thumbnail](info/06-e-commerce2/info_thumbnail.jpg)|
+|07| [E commerce3](https://github.com/xml12333/djangoPy/tree/07-e-commerce3)| [Demo](https://nikt-django-e-commerce3.netlify.app/)| ![Thumbnail](info/07-e-commerce3/info_thumbnail.jpg)|
