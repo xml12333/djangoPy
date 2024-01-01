@@ -8,4 +8,4 @@ set -o nounset
 python /app/api/manage.py collectstatic --noinput
 python /app/api/manage.py migrate
 
-/usr/local/bin/gunicorn core.asgi --bind 0.0.0.0:80 --chdir=/app
+/usr/local/bin/gunicorn core.asgi --bind 0.0.0.0:80 --chdir=/app/api
