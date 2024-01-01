@@ -37,7 +37,7 @@ class ChatConsumer(WebsocketConsumer):
         data = json.loads(text_data)
         data_source = data.get('source')
         # Pretty print python dict
-        if settings.LOG_ON:
+        if settings.LOGGING_ON:
             print('receive', json.dumps(data, indent=2))
         # Get friend list
         if data_source == 'friend.list':
@@ -77,7 +77,7 @@ class ChatConsumer(WebsocketConsumer):
                 id=connectionId
             )
         except Connection.DoesNotExist:
-            if settings.LOG_ON:
+            if settings.LOGGING_ON:
                 print('Error: couldnt find connection')
             return
         # Get messages
@@ -115,7 +115,7 @@ class ChatConsumer(WebsocketConsumer):
         try:
             connection = Connection.objects.get(id=connectionId)
         except Connection.DoesNotExist:
-            if settings.LOG_ON:
+            if settings.LOGGING_ON:
                 print('Error: couldnt find connection')
             return
         message = Message.objects.create(
@@ -190,7 +190,7 @@ class ChatConsumer(WebsocketConsumer):
                 receiver=self.scope['user']
             )
         except Connection.DoesNotExist:
-            if settings.LOG_ON:
+            if settings.LOGGING_ON:
                 print('Error: connection doesnt exist')
             return
         # update the connection
@@ -240,7 +240,7 @@ class ChatConsumer(WebsocketConsumer):
         try:
             receiver = User.objects.get(username=username)
         except User.DoesNotExist:
-            if settings.LOG_ON:
+            if settings.LOGGING_ON:
                 print('Error: User not found')
             return
         # Create connection
@@ -335,7 +335,7 @@ class ChatConsumer(WebsocketConsumer):
         try:
             data.pop('type')
         except:
-            if settings.LOG_ON:
+            if settings.LOGGING_ON:
                 print('error with pop type')
         '''
         return data:
