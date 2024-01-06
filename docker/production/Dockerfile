@@ -11,9 +11,9 @@ RUN apt-get update \
   # Translations dependencies
   && apt-get install -y gettext \
   # install daphne
-  && apt install -y daphne \
+  && apt-get install -y daphne \
   #install supervisor
-  && apt install -y supervisor \ 
+  && apt-get install -y supervisor \ 
   # cleaning up unused files
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
