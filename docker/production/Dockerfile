@@ -42,7 +42,9 @@ COPY --chown=django:django . /app
 #config for supervisor
 COPY --chown=django:django  ./docker/production/gunicorn.conf /etc/supervisor/conf.d/gunicorn.conf
 COPY --chown=django:django ./docker/production/daphne.conf /etc/supervisor/conf.d/daphne.conf
+
 RUN mkdir /logs
+RUN chown -R django:django /logs
 
 USER django
 
