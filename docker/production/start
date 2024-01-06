@@ -1,13 +1,2 @@
 #!/bin/bash
-
-set -o errexit
-set -o pipefail
-set -o nounset
-
-
-python /app/api/manage.py collectstatic --noinput
-python /app/api/manage.py migrate
-
-cd /app/api
-/usr/local/bin/daphne -b 0.0.0.0 -p 8001 core.asgi:application 
-/usr/local/bin/gunicorn core.wsgi --bind 0.0.0.0:80 --chdir=/app/api
+exec /usr/bin/supervisord -n 
