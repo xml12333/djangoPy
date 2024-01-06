@@ -57,4 +57,4 @@ USER django
 WORKDIR /app
 
 
-CMD ["/start_app"]
+CMD ["/start"]
