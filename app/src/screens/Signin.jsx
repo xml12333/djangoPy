@@ -53,7 +53,7 @@ const SignInScreen = ({navigation}) => {
       },
     })
       .then(response => {
-        // utils.log('Sign In:', response.data);
+        utils.log('Sign In:', response.data);
         const credentials = {
           username,
           password,
