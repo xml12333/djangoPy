@@ -46,10 +46,11 @@ COPY --chown=django:django ./docker/production/daphne.conf /etc/supervisor/conf.
 RUN mkdir /logs
 RUN chown -R django:django /logs
 RUN chown -R django:django /var/log/supervisor
+RUN chown -R django:django /var/run/supervisor
 
 USER django
 
 WORKDIR /app
 
 
-CMD ["/start"]
+CMD ["/start_app"]
