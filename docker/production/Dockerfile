@@ -24,6 +24,9 @@ RUN addgroup --system django \
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./docker/production/supervisord.conf /etc/supervisor/
+
 #copy start_app
 COPY --chown=django:django ./docker/production/start_app /start_app
 RUN sed -i 's/\r$//g' /start_app
