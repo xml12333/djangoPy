@@ -89,12 +89,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-        release {
-            storeFile file('realtime-chat.keystore')
-            storePassword System.console().readLine("\nKeystore password:")
-            keyAlias System.console().readLine("\nAlias: ")
-            keyPassword System.console().readLine("\nAlias password: ")
-        }
+        // release {
+        //     storeFile file('realtime-chat.keystore')
+        //     storePassword System.console().readLine("\nKeystore password:")
+        //     keyAlias System.console().readLine("\nAlias: ")
+        //     keyPassword System.console().readLine("\nAlias password: ")
+        // }
     }
     
 
@@ -105,7 +105,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.release
+            // signingConfig signingConfigs.release
             signingConfig signingConfigs.debug
 
             minifyEnabled enableProguardInReleaseBuilds
