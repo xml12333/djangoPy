@@ -168,4 +168,36 @@ MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+# Logger required settings.
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        "file": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": "/logs/django_debug.log",
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ["file"],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'daphne': {
+            'handlers': ["file"],
+            'level': 'DEBUG'
+        },
+    },
+    'formatters': {
+        'default': {
+            'format': '%(levelname)s %(asctime)s %(pathname)s line: %(lineno)d '
+                      'message: %(message)s',
+            'datefmt': '%d/%m/%Y %I:%M:%S'
+        },
+    },
+}
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
