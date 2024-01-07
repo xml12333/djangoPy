@@ -220,9 +220,9 @@ const useGlobal = create((set, get) => ({
   socket: null,
   socketConnect: async () => {
     const tokens = await secure.get('tokens');
-    console.log(`ws://${ADDRESS}/ws/chat/?token=${tokens.access}`)
+    console.log(`ws://${ADDRESS}/wschat/?token=${tokens.access}`)
     const socket = new WebSocket(
-      `ws://${ADDRESS}/ws/chat/?token=${tokens.access}`,
+      `ws://${ADDRESS}/wschat/?token=${tokens.access}`,
     );
     socket.onopen = () => {
       utils.log('socket.onopen');
