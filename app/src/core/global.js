@@ -228,7 +228,7 @@ const useGlobal = create((set, get) => ({
       utils.log('socket.onopen');
       socket.send(
         JSON.stringify({
-          source: 'request.list',r
+          source: 'request.list',
         }),
       );
       socket.send(
