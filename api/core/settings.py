@@ -181,14 +181,15 @@ LOGGING = {
         },
     },
     'loggers': {
-        'django': {
-            'handlers': ["file"],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
+        # 'django': {
+        #     'handlers': ["file"],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
         'daphne': {
             'handlers': ["file"],
-            'level': 'DEBUG'
+            'level': 'DEBUG',
+            "propagate": True,
         },
     },
     'formatters': {
