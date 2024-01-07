@@ -27,14 +27,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./docker/production/supervisord.conf /etc/supervisor/
 
-#copy start_app
-COPY --chown=django:django ./docker/production/start_app /start_app
-RUN sed -i 's/\r$//g' /start_app
-RUN chmod +x /start_app
-#copy start_daphne
-COPY --chown=django:django ./docker/production/start_daphne /start_daphne
-RUN sed -i 's/\r$//g' /start_daphne
-RUN chmod +x /start_daphne
+# #copy start_app
+# COPY --chown=django:django ./docker/production/start_app /start_app
+# RUN sed -i 's/\r$//g' /start_app
+# RUN chmod +x /start_app
+# #copy start_daphne
+# COPY --chown=django:django ./docker/production/start_daphne /start_daphne
+# RUN sed -i 's/\r$//g' /start_daphne
+# RUN chmod +x /start_daphne
 #copy start
 COPY --chown=django:django ./docker/production/start /start
 RUN sed -i 's/\r$//g' /start
