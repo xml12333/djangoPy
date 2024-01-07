@@ -51,7 +51,6 @@ RUN chown -R django:django /logs
 RUN chown -R django:django /var/log/supervisor
 RUN chown -R django:django /var/run
 
-EXPOSE 8001
 
 USER django
 
