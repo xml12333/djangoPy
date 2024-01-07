@@ -17,6 +17,7 @@ make server
 in docker\production:
 - daphne.conf - supervisor config for daphne service
 - gunicorn.conf - supervisor config for gunicorn service
+- start_app - bash script from gunicorn.conf
 - supervisord.conf - supervisor config
 - start - bash script for running supervisor witch start daphne and gunicorn according to config file above.
 - nginx_exampl.conf - example of line needed to fix in caprover app nginx config for correct redirection, alson in caprover app need create port maping 8010-8010
